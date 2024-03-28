@@ -6,10 +6,14 @@
 
 function sleep(milliseconds) {
     return new Promise((resolve) => {
-        setTimeout(() => {
-            resolve();
-        }, milliseconds)
-    })
+        resolve(consoleLog(milliseconds))
+    }, milliseconds)
 }
+
+function consoleLog(n) {
+    console.log(n);
+}
+
+sleep(2000);
 
 module.exports = sleep;
